@@ -109,7 +109,7 @@ GUniFrac <-function (otu.tab, tree, alpha= c(0,0.5,1)) {
     
         output = list(d0 = d0,dw=dw, d5=d5)
     } else {
-        GUniF = GUniFracCpp(cum,br.len, alpha)
+        GUniF = GUniFracCpp2(cum,br.len, alpha)
         output = list(GUniF = GUniF, alpha = alpha)
     }
     output
