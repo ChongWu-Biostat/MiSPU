@@ -1,0 +1,11 @@
+useDynLib(MiSPU)
+importFrom(Rcpp, evalCpp)
+import(
+vegan,
+ape,
+aSPU
+)
+export(MiSPU)
+export(rdirichlet)
+export(GUniFrac)
+
