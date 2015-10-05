@@ -9,27 +9,21 @@ Microbiome Based Sum of Powered Score (MiSPU) Tests
 ## Install the package
 
 We need install the dependent packages first. To download the MiSPU successfully, we must install "devtools".
-'''
+
+```
 install.packages("vegan")
-
 install.packages("ape")
-
 install.packages("aSPU")
-
 install.packages("ade4")
-
 install.packages("Rcpp")
-
 install.packages("RcppArmadillo")
-
 install.packages("vegan") # install the dependent packages from CRAN
 
 install.packages("devtools")
 
+library(devtools)
 install_github("ChongWu-Biostat/MiSPU") # install the MiSPU packages
-'''
-
-
+```
 
 
 
