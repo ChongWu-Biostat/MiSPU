@@ -26,7 +26,7 @@ install_github("ChongWu-Biostat/MiSPU") # install the MiSPU packages
 ```
 
 ## MiSPU
-MiSPU performs MiSPU and aMiSPU for microbiome data set. We use a real data example here to illustrate the performance of MiSPU and aMiSPU. Note that to save time, we set permutation time equals 1000. In the paper, we set it equals 100000.
+MiSPU performs MiSPU and aMiSPU for microbiome data set. We use a real data example here to illustrate the performance of MiSPU and aMiSPU. Note that to save time, we set permutation time equals 1000. In the paper, we set it equals 100,000.
 ```
 data(throat.otu.tab)
 data(throat.tree)
