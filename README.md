@@ -48,6 +48,21 @@ out
 proc.time() - strat.time
 ```
 
+## Generalized UniFrac
+We note that calculating generalized unifrac distance matrix is time consuming especially for the large data set. To save computational time, here, we provide a C version of generalized UniFrac function. We expect this function is much faster than the existing GUniFrac R package.
+```
+data(throat.otu.tab)
+data(throat.tree)
+data(throat.meta)
+groups <- throat.meta$SmokingStatus
+
+# Calculate the UniFracs
+unifracs <- GUniFrac(throat.otu.tab, throat.tree)
+unifracs
+```
+
+## Manual
+You can download the MiSPU package manual [here](http://cutpi.com/upimages/1444077574.pdf). 
 
 
 
