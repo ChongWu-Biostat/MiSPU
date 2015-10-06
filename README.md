@@ -24,7 +24,7 @@ MiSPU performs MiSPU and aMiSPU for microbiome data set. We use a real data exam
 ```
 data(throat.otu.tab)
 data(throat.tree)
-data(throat.meta)
+data(throat.meta) # the data is from the paper: Charlson ES, Chen J, Custers-Allen R, Bittinger K, Li H, et al. (2010) Disordered Microbial Com- munities in the Upper Respiratory Tract of Cigarette Smokers. PLoS ONE 5(12): e15216.
 
 Y.tmp =throat.meta[,3]
 Y = rep(0,dim(throat.meta)[1])
@@ -39,7 +39,7 @@ X = as.matrix(throat.otu.tab)
 out = MiSPU(Y,X, throat.tree,cov,resample = "perm", model =  "binomial", pow = c(2:8, Inf), n.perm = 1000)
 out
 
-proc.time() - strat.time
+proc.time() - start.time
 ```
 
 ## Generalized UniFrac
@@ -47,7 +47,9 @@ We note that calculating generalized unifrac distance matrix is time consuming e
 ```
 data(throat.otu.tab)
 data(throat.tree)
-data(throat.meta)
+data(throat.meta) # the data is from the paper: Charlson ES, Chen J, Custers-Allen R, Bittinger K, Li H, et al. (2010) Disordered Microbial Com- munities in the Upper Respiratory Tract of Cigarette Smokers. PLoS ONE 5(12): e15216.
+
+
 groups <- throat.meta$SmokingStatus
 
 # Calculate the UniFracs
