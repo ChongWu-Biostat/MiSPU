@@ -8,8 +8,7 @@ Microbiome Based Sum of Powered Score (MiSPU) Tests
 
 ## Install the package
 
-We need install the dependent packages first. To download the MiSPU successfully, we must install "devtools".
-
+### For Mac User: 
 ```
 install.packages("vegan")
 install.packages("ape")
@@ -24,7 +23,19 @@ install.packages("devtools")
 library(devtools)
 install_github("ChongWu-Biostat/MiSPU") # install the MiSPU packages
 ```
+### For Windows and Linux user:
+Note that the package is not fully tested. Please send us an email if you meet any problems. First, we need download the source file [here](). Then in R, we can install the package as follows.
+```
+install.packages("vegan")
+install.packages("ape")
+install.packages("aSPU")
+install.packages("ade4")
+install.packages("Rcpp")
+install.packages("RcppArmadillo")
+install.packages("vegan") # install the dependent packages from CRAN
 
+install.packages("your directory(change it)/MiRKAT_0.01.tar", repos = NULL,type="source”)
+```
 ## MiSPU
 MiSPU performs MiSPU and aMiSPU for microbiome data set. We use a real data example here to illustrate the performance of MiSPU and aMiSPU. Note that to save time, we set permutation time equals 1000. In the paper, we set it equals 100,000.
 ```
