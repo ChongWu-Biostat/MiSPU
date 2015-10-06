@@ -3,7 +3,7 @@ Microbiome Based Sum of Powered Score (MiSPU) Tests
 
 
 ## Install the package
-We test it on R 3.2.1 and 3.2.2. ** Note that for windows user, we need install [Rtools](https://cran.r-project.org/bin/windows/Rtools/) first.**.
+We test it on R 3.2.1 and 3.2.2. *Note that for windows user, we need install [Rtools](https://cran.r-project.org/bin/windows/Rtools/) first.*
 ### For Mac and windows User: 
 ```
 install.packages("vegan")
