@@ -24,7 +24,7 @@ library(devtools)
 install_github("ChongWu-Biostat/MiSPU") # install the MiSPU packages
 ```
 ### For Windows and Linux user:
-First, we need download the source file [here](). Then in R, we can install the package as follows.
+First, we need download the source file [here](https://www.dropbox.com/s/ucaqlj13qjqd8x4/MiSPU_1.0.tar.gz?dl=0). Then in R, we can install the package as follows.
 ```
 install.packages("vegan")
 install.packages("ape")
