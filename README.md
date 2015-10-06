@@ -3,8 +3,8 @@ Microbiome Based Sum of Powered Score (MiSPU) Tests
 
 
 ## Install the package
-We test it on R 3.2.1 and 3.2.2. Currently, the package is unavaiable for Windows user. We will update it soon.
-### For Mac User: 
+We test it on R 3.2.1 and 3.2.2. ** Note that for windows user, we need install [Rtools](https://cran.r-project.org/bin/windows/Rtools/) first.**.
+### For Mac and windows User: 
 ```
 install.packages("vegan")
 install.packages("ape")
@@ -19,7 +19,7 @@ install.packages("devtools")
 library(devtools)
 install_github("ChongWu-Biostat/MiSPU") # install the MiSPU packages
 ```
-### For Linux user:
+### For Linux server user:
 First, we need download the source file [here](https://www.dropbox.com/s/ucaqlj13qjqd8x4/MiSPU_1.0.tar.gz?dl=0). Note in R, we need specify the directory of the source file. Sorry for the inconvenience.
 ```
 install.packages("vegan")
