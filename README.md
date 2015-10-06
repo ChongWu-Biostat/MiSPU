@@ -7,7 +7,7 @@ Microbiome Based Sum of Powered Score (MiSPU) Tests
 **Results**: We propose a class of microbiome based sum of powered score (MiSPU) tests based on a newly defined generalized taxon proportion that combines observed microbial composition information with phylogenetic tree information. Different from the existing methods, a MiSPU test is based on a weighted score of the generalized taxon proportion in a general framework of regression, upweighting more likely to be associated microbial lineages. Our simulations demonstrated that one or more MiSPU tests were more powerful than MiRKAT while correctly controlling type I error rates. An adaptive MiSPU (aMiSPU) test is proposed to combine multiple MiSPU tests with various weights, approximating the most powerful MiSPU for a given scenario, consequently being highly adaptive and high powered across various scenarios. We applied MiSPU and aMiSPU to a throat microbiome dataset, showing that microbial communities were associated with the smoking status while adjusting for potential confounders.
 
 ## Install the package
-
+We test it on R 3.2.1 and 3.2.2. Other versions may meet some problems and feel free to send us an email if you meet any problems. 
 ### For Mac User: 
 ```
 install.packages("vegan")
@@ -24,7 +24,7 @@ library(devtools)
 install_github("ChongWu-Biostat/MiSPU") # install the MiSPU packages
 ```
 ### For Windows and Linux user:
-Note that the package is not fully tested. Please send us an email if you meet any problems. First, we need download the source file [here](). Then in R, we can install the package as follows.
+First, we need download the source file [here](). Then in R, we can install the package as follows.
 ```
 install.packages("vegan")
 install.packages("ape")
@@ -73,7 +73,7 @@ unifracs
 ```
 
 ## Manual
-You can download the MiSPU package manual [here](http://cutpi.com/upimages/1444077574.pdf). 
+If you like MiSPU, please give us a star. You can download the MiSPU package manual [here](http://cutpi.com/upimages/1444077574.pdf). 
 
 
 
