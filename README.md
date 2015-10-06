@@ -3,7 +3,7 @@ Microbiome Based Sum of Powered Score (MiSPU) Tests
 
 
 ## Install the package
-We test it on R 3.2.1 and 3.2.2. Other versions may meet some problems and feel free to send us an email if you meet any problems. 
+We test it on R 3.2.1 and 3.2.2. Currently, the package is unavaiable for Windows user. We will update it soon.
 ### For Mac User: 
 ```
 install.packages("vegan")
