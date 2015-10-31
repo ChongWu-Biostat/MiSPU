@@ -9,3 +9,11 @@ GUniFracCpp2 <- function(cum, brlen, powV) {
     .Call('MiSPU_GUniFracCpp2', PACKAGE = 'MiSPU', cum, brlen, powV)
 }
 
+MiSPUC <- function(X1, r1, X2, r2, powV, nperm) {
+    .Call('MiSPU_MiSPUC', PACKAGE = 'MiSPU', X1, r1, X2, r2, powV, nperm)
+}
+
+BCdist <- function(X, weight) {
+    .Call('MiSPU_BCdist', PACKAGE = 'MiSPU', X, weight)
+}
+
