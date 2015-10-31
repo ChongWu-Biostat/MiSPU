@@ -22,8 +22,7 @@ Or it can be a quantitative trait. A vector with length n (number of observation
 \item{n.perm}{number of permutations or bootstraps.}
 }
 \value{
-A list object, Ts : test statistics for the MiSPU tests (in the order of the specified pow) and finally for the aMiSPU test.
-        pvs : p-values for the MiSPU and aMiSPU tests.
+A list object, including the results for MiSPU_u, MiSPU_w and aMiSPU.
 }
 \description{
 We propose a class of microbiome based sum of powered score (MiSPU) tests based on a newly defined generalized taxon proportion that combines observed microbial composition information with phylogenetic tree information. Different from the existing methods, a MiSPU test is based on a weighted score of the generalized taxon proportion in a general framework of regression, upweighting more likely to be associated microbial lineages. Our simulations demonstrated that one or more MiSPU tests were more powerful than MiRKAT while correctly controlling type I error rates. An adaptive MiSPU (aMiSPU) test is proposed to combine multiple MiSPU tests with various weights, approximating the most powerful MiSPU for a given scenario, consequently being highly adaptive and high powered across various scenarios.
@@ -45,8 +44,7 @@ cov[cov.tmp[,2]== "Male",2] = 0
 start.time = proc.time()
 X = as.matrix(throat.otu.tab)
 
-out = MiSPU(Y,X, throat.tree,cov,resample = "perm",
-      model =  "binomial", pow = c(2:8, Inf), n.perm = 1000)
+out = MiSPU(Y,X, throat.tree,cov,model =  "binomial", pow = c(2:8, Inf), n.perm = 1000)
 out
 }
 \author{

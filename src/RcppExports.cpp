@@ -31,3 +31,31 @@ BEGIN_RCPP
     return __result;
 END_RCPP
 }
+// MiSPUC
+List MiSPUC(arma::mat X1, arma::mat r1, arma::mat X2, arma::mat r2, arma::mat powV, int nperm);
+RcppExport SEXP MiSPU_MiSPUC(SEXP X1SEXP, SEXP r1SEXP, SEXP X2SEXP, SEXP r2SEXP, SEXP powVSEXP, SEXP npermSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject __result;
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< arma::mat >::type X1(X1SEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type r1(r1SEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type X2(X2SEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type r2(r2SEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type powV(powVSEXP);
+    Rcpp::traits::input_parameter< int >::type nperm(npermSEXP);
+    __result = Rcpp::wrap(MiSPUC(X1, r1, X2, r2, powV, nperm));
+    return __result;
+END_RCPP
+}
+// BCdist
+arma::mat BCdist(arma::mat X, arma::mat weight);
+RcppExport SEXP MiSPU_BCdist(SEXP XSEXP, SEXP weightSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject __result;
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< arma::mat >::type X(XSEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type weight(weightSEXP);
+    __result = Rcpp::wrap(BCdist(X, weight));
+    return __result;
+END_RCPP
+}
