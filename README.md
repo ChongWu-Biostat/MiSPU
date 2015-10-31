@@ -4,22 +4,12 @@ Microbiome Based Sum of Powered Score (MiSPU) Tests
 ## Install the package
 We test it on R 3.2.1 in Linux server and 3.2.2 in Windows and Mac. *Note that for windows user, we need install [Rtools](https://cran.r-project.org/bin/windows/Rtools/) first. For Mac user, we need install [gfortran](https://cran.r-project.org/bin/macosx/tools/).*
 ```
-install.packages("vegan") # 
-install.packages("ape")
-install.packages("aSPU")
-install.packages("ade4")
-install.packages("Rcpp")
-install.packages("RcppArmadillo")
-install.packages("vegan") # install the dependent packages from CRAN.
-
-install.packages("devtools")
-
 library(devtools)
 install_github("ChongWu-Biostat/MiSPU") # install the MiSPU packages
 ```
 
 ## MiSPU
-MiSPU performs MiSPU and aMiSPU for microbiome data set. We use a real data example here to illustrate the performance of MiSPU and aMiSPU. Note that to save time, we set permutation time equals 1000. In the paper, we set it equals 100,000.
+MiSPU performs MiSPU and aMiSPU for microbiome data set. We use a real data example here to illustrate the performance of MiSPU and aMiSPU. Note that the number of permutation (n.perm) equals 10,000. In the paper, we set it equals 2,000,000 (Take around one or two hours to run depending on the performance of computers).
 ```
 data(throat.otu.tab)
 data(throat.tree)
@@ -35,14 +25,14 @@ cov[cov.tmp[,2]== "Male",2] = 0
 start.time = proc.time()
 X = as.matrix(throat.otu.tab)
 
-out = MiSPU(Y,X, throat.tree,cov,resample = "perm", model =  "binomial", pow = c(2:8, Inf), n.perm = 1000)
+out = MiSPU(Y,X, throat.tree,cov, model =  "binomial", pow = c(2:8, Inf), n.perm = 1000)
 out
 
 proc.time() - start.time
 ```
 
 ## Generalized UniFrac
-We note that calculating generalized unifrac distance matrix is time consuming especially for the large data set. To save computational time, here, we provide a C version of generalized UniFrac function. We expect this function is much faster than the existing GUniFrac R package.
+We note that calculating generalized unifrac distance matrix is time consuming especially for the large data set. To save computational time, here, we provide a C version of generalized UniFrac function. We expect this function is much faster than the existing GUniFrac R package. Some users stated that this function is around 4 times faster than the competing ones and we will do a fully test in the near future. 
 ```
 data(throat.otu.tab)
 data(throat.tree)
