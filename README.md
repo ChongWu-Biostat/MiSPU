@@ -47,7 +47,7 @@ unifracs
 ```
 
 ## Manual
-If you like MiSPU, please give us a star. You can download the MiSPU package manual [here](http://cutpi.com/upimages/1444077574.pdf). 
+If you like *MiSPU*, please give us a star. You can download the *MiSPU* package manual [here](http://cutpi.com/upimages/1444077574.pdf). 
 
 
 
