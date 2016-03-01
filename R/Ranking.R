@@ -11,17 +11,12 @@ correspLeaves <- function(tree) {
     edge = tree$edge
     edge2 = edge[, 2]
     
-    res = list()
+    res = vector("list", length = dim(edge)[1])
     for(i in 1:ntip) {
-        res[[i]] = i
         node.loc <- which(edge2 == i)
+
         while (length(node.loc)) {
-            if(length(res) <= node.loc) {
-                res[[node.loc]]  = i
-            } else {
-                res[[node.loc]] = c(res[[node.loc]] ,i)
-                
-            }
+            res[[node.loc]] = c(res[[node.loc]] ,i)
             node <- edge[node.loc, 1]
             node.loc <- which(edge2 == node)
         }
@@ -66,17 +61,6 @@ ranking <- function(y, X,tree,cov = NULL,gamma, g.taxon.index,model = "binomial"
         pis <-fitted.values(fit1)
         r<-Y - pis
         
-        ## To adjust the correlation between x and other covarites; it will correct something and slightly improve the power.
-        Us <- XUs <- matrix(0, nrow=n, ncol=k)
-        Xmus = X
-        for(i in 1:k){
-            tdat2 <- data.frame(X1=X[,i], cov)
-            fit2 <- glm(X1~., data=tdat2)
-            Xmus[,i] <- fitted.values(fit2)
-            XUs[, i] <- (X[,i] - Xmus[,i])
-        }
-        
-        X = XUs
         U<-t(X) %*% r
     }
     U.score = abs(U)^gamma
