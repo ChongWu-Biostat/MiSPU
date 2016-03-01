@@ -1,0 +1,50 @@
+###############################################################
+# Chong Wu
+# email: wuxx0845@umn.edu
+###############################################################
+simulateData <- function(nSam=100, s=12,ncluster = 20,mu = 1000, size = 25) {
+    data(throat.otu.tab)
+    data(throat.tree)
+    data(throat.meta)
+    data(DirMultOutput)
+
+    tree <- throat.tree
+    tree.dist <- cophenetic(tree)
+    obj <- pam(as.dist(tree.dist), ncluster,diss =TRUE)
+    clustering <- obj$clustering
+    otu.ids <- tree$tip.label
+    
+    p.est = dd$pi
+    names(p.est) <- names(dd$pi)
+    theta <- dd$theta
+    gplus <- (1 - theta) / theta
+    p.est <- p.est[otu.ids]
+    g.est <- p.est * gplus
+    p.clus <- sort(tapply(p.est, clustering, sum), decr=T)
+    scale2 = function(x)as.numeric(scale(x))
+    
+    
+    comm <- matrix(0, nSam, length(g.est))
+    rownames(comm) <- 1:nrow(comm)
+    colnames(comm) <- names(g.est)
+    # comm.p hold the underlying proportions
+    comm.p <- comm
+    nSeq <- rnbinom(nSam, mu = mu, size = size)
+    for (i in 1:nSam) {
+        comm.p[i, ] <- rdirichlet(1, g.est)[1, ]
+        comm[i, ] <- rmultinom(1, nSeq[i], prob=comm.p[i, ])[, 1]
+    }
+    
+    otu.ids <- names(which(clustering == s))
+    # y <- scale(apply(comm.p[, otu.ids], 1, sum))[, 1] * b * f + rnorm(nSam,mean =0, sd = sqrt(1.5)) # var = 1.5
+    
+    # No additional covariates in this case.
+    OTU = comm[, otu.ids]
+    return(list(informative.OTU = OTU,whole.OTU = OTU))
+}
+
+
+
+
+
+

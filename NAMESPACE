@@ -3,10 +3,13 @@ importFrom(Rcpp, evalCpp)
 import(
 vegan,
 ape,
-aSPU
+aSPU,
+cluster
 )
 export(MiSPU)
 export(rdirichlet)
 export(GUniFrac)
-
+export(ranking)
+export(simulateData)
+export(correspLeaves)
 

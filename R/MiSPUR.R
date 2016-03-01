@@ -23,17 +23,6 @@ MiSPUR <- function(Y, X, X2, cov = NULL, model=c("gaussian","binomial"), pow=c(2
         pis <-fitted.values(fit1)
         r<-Y - pis
         
-        ## To adjust the correlation between x and other covarites; it will correct something and slightly improve the power.
-        Us <- XUs <- matrix(0, nrow=n, ncol=k)
-        Xmus = X
-        for(i in 1:k){
-            tdat2 <- data.frame(X1=X[,i], cov)
-            fit2 <- glm(X1~., data=tdat2)
-            Xmus[,i] <- fitted.values(fit2)
-            XUs[, i] <- (X[,i] - Xmus[,i])
-        }
-        
-        X = XUs
         U<-t(X) %*% r
     }
     
@@ -54,19 +43,6 @@ MiSPUR <- function(Y, X, X2, cov = NULL, model=c("gaussian","binomial"), pow=c(2
     } else {
         # the null model is the same, so we just use pis.
         r2<-Y - pis
-        
-        ## To adjust the correlation between x and other covarites; it will correct something and slightly improve the power.
-        Us <- XUs <- matrix(0, nrow=n, ncol=k)
-        Xmus = X2
-        for(i in 1:k){
-            tdat2 <- data.frame(X1=X2[,i], cov)
-            fit2 <- glm(X1~., data=tdat2)
-            Xmus[,i] <- fitted.values(fit2)
-            XUs[, i] <- (X[,i] - Xmus[,i])
-        }
-        
-        X2 = XUs
-
         U2<-t(X2) %*% r2
     }
     

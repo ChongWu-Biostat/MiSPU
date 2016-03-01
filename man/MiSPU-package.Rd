@@ -1,6 +1,5 @@
 \name{MiSPU-package}
 \alias{MiSPU-package}
-\alias{MiSPU}
 \docType{package}
 \title{
 \packageTitle{MiSPU}
@@ -43,7 +42,6 @@ cov[cov.tmp[,2]== "Male",2] = 0
 start.time = proc.time()
 X = as.matrix(throat.otu.tab)
 
-out = MiSPU(Y,X, throat.tree,cov,resample = "perm",
-      model =  "binomial", pow = c(2:8, Inf), n.perm = 1000)
+out = MiSPU(Y,X, throat.tree,cov,model =  "binomial", pow = c(2:8, Inf), n.perm = 1000)
 out
 }

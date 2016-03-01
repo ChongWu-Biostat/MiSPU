@@ -4,8 +4,7 @@
 \alias{MiSPU}
 \title{microbiome based sum of powered score (MiSPU)}
 \usage{
-MiSPU(y, X, tree, cov = NULL, resample = c("perm", "sim", "boot"),
-      model = c("gaussian", "binomial"), pow = c(2:8, Inf), n.perm = 1000)
+MiSPU(y, X, tree, cov = NULL,model = c("gaussian", "binomial"), pow = c(2:8, Inf), n.perm = 1000)
 }
 \arguments{
 \item{y}{Outcome of interest. It can be a disease indicator; =0 for controls, =1 for cases.
@@ -13,12 +12,8 @@ Or it can be a quantitative trait. A vector with length n (number of observation
 \item{X}{OTU count table, row - n sample, column - q OTU}
 \item{tree}{Rooted phylogenetic tree of R class \dQuote{phylo}}
 \item{cov}{Covariates. A matrix with dimension n by p (n :number of observation, p : number of covariates).}
-\item{resample}{Use "perm" for residual permutations, "sim" for simulations from the null distribution, and "boot" for parametric bootstrap.}
-
 \item{model}{Use "gaussian" for a quantitative trait, and use "binomial" for a binary trait.}
-
 \item{pow}{The gamma which controls the weight. Larger pow puts more weight on the variables that have larger absolute score.}
-
 \item{n.perm}{number of permutations or bootstraps.}
 }
 \value{
