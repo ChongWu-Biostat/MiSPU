@@ -4,7 +4,8 @@
 \alias{MiSPU}
 \title{microbiome based sum of powered score (MiSPU)}
 \usage{
-MiSPU(y, X, tree, cov = NULL,model = c("gaussian", "binomial"), pow = c(2:8, Inf), n.perm = 1000)
+MiSPU(y, X, tree, cov = NULL,model = c("gaussian", "binomial"),
+ pow = c(2:8, Inf), n.perm = 1000)
 }
 \arguments{
 \item{y}{Outcome of interest. It can be a disease indicator; =0 for controls, =1 for cases.
