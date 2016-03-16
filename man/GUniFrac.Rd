@@ -64,11 +64,7 @@ Chong Wu <chongwu@umn.edu>
 }
 \note{
 %%  ~~further notes~~
-The time consuming part is written in C and faster than the original one. 
-
-The function only accepts rooted tree. To root a tree, you may
-consider using the R code from 
-\url{https://stat.ethz.ch/pipermail/r-sig-phylo/2010-September/000750.html}
+The time consuming part is written in C and faster than the original one. The function only accepts rooted tree. 
 }
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
