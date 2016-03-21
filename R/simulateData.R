@@ -19,20 +19,20 @@
 #suppressBindingNotes(c(".->ConfigString","ConfigString"))
 
 simulateData <- function(nSam=100, s=12,ncluster = 20,mu = 1000, size = 25) {
-    data(throat.otu.tab)
-    data(throat.tree)
-    data(throat.meta)
-    data(dd)
-
-    tree <- throat.tree
+    
+    data(throat.tree,envir = environment())
+    data(dd,envir = environment())
+    
+    tree <- get("throat.tree", envir  = environment())
+    dd1 = get("dd",envir  = environment())
     tree.dist <- cophenetic(tree)
     obj <- pam(as.dist(tree.dist), ncluster,diss =TRUE)
     clustering <- obj$clustering
     otu.ids <- tree$tip.label
     
-    p.est = dd$pi
-    names(p.est) <- names(dd$pi)
-    theta <- dd$theta
+    p.est = dd1$pi
+    names(p.est) <- names(dd1$pi)
+    theta <- dd1$theta
     gplus <- (1 - theta) / theta
     p.est <- p.est[otu.ids]
     g.est <- p.est * gplus
