@@ -1,11 +1,11 @@
-# MiSPU
-Microbiome Based Sum of Powered Score (MiSPU) Tests 
+# MiSPU [![License](http://img.shields.io/badge/license-GPL%20%28%3E=%202%29-brightgreen.svg?style=flat)](http://www.gnu.org/licenses/gpl-2.0.html) [![CRAN](http://www.r-pkg.org/badges/version/MiSPU)](http://cran.rstudio.com/package=MiSPU) [![Downloads](http://cranlogs.r-pkg.org/badges/MiSPU?color=brightgreen)](http://www.r-pkg.org/pkg/MiSPU)
+
+Microbiome Based Sum of Powered Score (MiSPU) Tests. The packag is avaiable at CRAN now. 
 
 ## Install the package
-We test it on R 3.2.1 in Linux server and 3.2.2 in Windows and Mac. *Note that for windows user, we need install [Rtools](https://cran.r-project.org/bin/windows/Rtools/) first. For Mac user, we need install [gfortran](https://cran.r-project.org/bin/macosx/tools/).*
 ```
-library(devtools)
-install_github("ChongWu-Biostat/MiSPU") # install the MiSPU packages
+install.packages("MiSPU")
+library(MiSPU)
 ```
 
 ## MiSPU
