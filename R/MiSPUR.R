@@ -19,6 +19,13 @@ MiSPUR <- function(Y, X, X2, cov = NULL, model=c("gaussian","binomial"), pow=c(2
         U<-as.vector(t(X) %*% r)
     } else {
         tdat1 <-data.frame(trait=Y, cov)
+        
+        if(is.null(colnames(cov))) {
+            colnames(tdat1) = c("trait", paste("cov",1:dim(cov)[2],sep=""))
+        } else {
+            colnames(tdat1) = c("trait", colnames(cov))
+        }
+        
         fit1 <-glm(trait~.,family=model,data=tdat1)
         pis <-fitted.values(fit1)
         r<-Y - pis
