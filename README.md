@@ -1,5 +1,4 @@
-# MiSPU [![License](http://img.shields.io/badge/license-GPL%20%28%3E=%202%29-brightgreen.svg?style=flat)](http://www.gnu.org/licenses/gpl-2.0.html) [![CRAN](http://www.r-pkg.org/badges/version/MiSPU)](http://cran.rstudio.com/package=MiSPU) [![Downloads](http://cranlogs.r-pkg.org/badges/MiSPU?color=brightgreen)](http://www.r-pkg.org/pkg/MiSPU)
-
+# MiSPU [![License](http://img.shields.io/badge/license-GPL%20%28%3E=%202%29-brightgreen.svg?style=flat)](http://www.gnu.org/licenses/gpl-2.0.html) [![CRAN](http://www.r-pkg.org/badges/version/MiSPU)](http://cran.rstudio.com/package=MiSPU) [![Downloads](http://cranlogs.r-pkg.org/badges/MiSPU?color=brightgreen)](http://www.r-pkg.org/pkg/MiSPU)![downloads](http://cranlogs.r-pkg.org/badges/grand-total/MiSPU)
 Microbiome Based Sum of Powered Score (MiSPU) Tests. The packag is avaiable at CRAN now. 
 
 ## Installation
