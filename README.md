@@ -19,6 +19,7 @@ devtools::install_github("ChongWu-Biostat/MiSPU")
 ## MiSPU
 MiSPU performs MiSPU and aMiSPU for microbiome data set. We use a real data example here to illustrate the performance of MiSPU and aMiSPU. Note that the number of permutation (n.perm) equals 10,000. In the paper, we set it equals 2,000,000 (Take around one or two hours to run depending on the performance of computers).
 ```r
+library(MiSPU)
 data(throat.otu.tab)
 data(throat.tree)
 data(throat.meta) # the data is from the paper: Charlson ES, Chen J, Custers-Allen R, Bittinger K, Li H, et al. (2010) Disordered Microbial Com- munities in the Upper Respiratory Tract of Cigarette Smokers. PLoS ONE 5(12): e15216.
